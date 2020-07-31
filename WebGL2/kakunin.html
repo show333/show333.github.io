@@ -52,6 +52,17 @@ scene.add(box);
   sphere.position.set( 0, 0, -5 );
   sphere.rotation.x = 0.2;
   scene.add( sphere ); 
+ 
+//円錐を作成
+var Cylinder = new THREE.Mesh(                                     
+     new THREE.CylinderGeometry(20,20,40,50),                         
+     new THREE.MeshPhongMaterial({                                      
+               color: 0x00FF7F
+       
+      }));
+        
+//sceneオブジェクトに追加
+scene.add(Cylinder);    
 
 
 // 平行光源
