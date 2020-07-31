@@ -53,6 +53,15 @@ scene.add(box);
   sphere.rotation.x = 0.2;
   scene.add( sphere ); 
         
+    
+// テクスチャー読み込み
+var textureLoader = new THREE.TextureLoader(); var texture = textureLoader.load("stone.jpg"); var mat = new THREE.MeshPhongMaterial(); mat.map = texture;
+// バンプマップ読み込み
+var bump = textureLoader.load("stone-bump.jpg"); mat.bumpMap = bump;
+mat.bumpscale = 0.2;
+// 箱を作成
+var geometry1 = new THREE.BoxGeometry(1, 1, 1); var box = new THREE.Mesh(geometry1, mat); box.position.set(1.5,0,-5);
+scene.add(box);
 
 
 // 平行光源
