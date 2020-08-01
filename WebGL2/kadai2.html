@@ -12,6 +12,7 @@
 </head>
 <body>
 <script>
+  
   var init = function() {
 
     var width = 800,
@@ -44,16 +45,15 @@
   //var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
   //var box = new THREE.Mesh(geometry, material);
   var box = new THREE.Mesh(geometry, mat);
-  box.position.z = -5;
-  box.position.x = 2;
+  box.position.z = -10;
   scene.add(box);
 
   // 球を作成
-　var sphereGeometry = new THREE.SphereGeometry( 0.8, 32, 32 );
+　var sphereGeometry = new THREE.SphereGeometry( 0.7, 32, 32 );
  //半径、垂直方向の分割数、水平方向の分割数
  //var sphereMaterial = new THREE.MeshPhongMaterial( {color: 0xffffff);
  var sphere = new THREE.Mesh( sphereGeometry, mat );
- 
+ sphere.position.set( 2, 0, -10 );
  sphere.rotation.x = 0.2;
  scene.add( sphere );
 
@@ -61,8 +61,7 @@
  var coneGeometry = new THREE.ConeGeometry( 0.5, 1, 32);
  var coneMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff });
  var cone = new THREE.Mesh(coneGeometry, mat);
- cone.position.set(-5,0,-10);
- cone.position.
+ cone.position.set(-2,0,-10);
  scene.add(cone);
 
 
@@ -86,7 +85,8 @@
     box.rotation.y += 0.01;
 
     // 球を回転させる
-    sphere.rotation.y += 0.01;
+    sphere.rotation.x += 0.01;
+
 
     // 円錐を回転させる
     cone.rotation.x += 0.01;
@@ -98,6 +98,7 @@
   update();
 }
   window.addEventListener('DOMContentLoaded', init);
+
 </script>
 </body>
 </html>
